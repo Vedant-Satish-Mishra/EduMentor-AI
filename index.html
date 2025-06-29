@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduMentor AI</title>
+    <style>
+        *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb;}
+        html{line-height:1.5;-webkit-text-size-adjust:100%;}
+        body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;}
+        h1,h2,h3{font-size:inherit;font-weight:inherit;}
+        a{color:inherit;text-decoration:inherit;}
+        button,input,textarea{font-family:inherit;font-size:100%;line-height:inherit;color:inherit;margin:0;padding:0;}
+        button{background-color:transparent;background-image:none;}
+        input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#9ca3af;}
+        input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#9ca3af;}
+        input::placeholder,textarea::placeholder{color:#9ca3af;}
+        ul{list-style:none;padding:0;}
+        .container{max-width:1280px;margin-left:auto;margin-right:auto;}
+        .bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity));}
+        .bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity));}
+        .bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity));}
+        .bg-gray-200{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity));}
+        .bg-gray-800{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity));}
+        .bg-green-600{--tw-bg-opacity:1;background-color:rgb(22 163 74 / var(--tw-bg-opacity));}
+        .bg-green-700{--tw-bg-opacity:1;background-color:rgb(21 128 61 / var(--tw-bg-opacity));}
+        .bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity));}
+        .text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity));}
+        .text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity));}
+        .text-red-500{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity));}
+        .text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity));}
+        .text-lg{font-size:1.125rem;line-height:1.75rem;}
+        .text-2xl{font-size:1.5rem;line-height:2rem;}
+        .text-3xl{font-size:1.875rem;line-height:2.25rem;}
+        .font-bold{font-weight:700;}
+        .font-semibold{font-weight:600;}
+        .font-sans{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;}
+        .p-2{padding:0.5rem;}
+        .p-4{padding:1rem;}
+        .p-6{padding:1.5rem;}
+        .px-4{padding-left:1rem;padding-right:1rem;}
+        .py-2{padding-top:0.5rem;padding-bottom:0.5rem;}
+        .mb-2{margin-bottom:0.5rem;}
+        .mb-4{margin-bottom:1rem;}
+        .mb-8{margin-bottom:2rem;}
+        .mt-4{margin-top:1rem;}
+        .ml-6{margin-left:1.5rem;}
+        .flex{display:flex;}
+        .space-x-4>:not(:first-child){margin-left:1rem;}
+        .w-full{width:100%;}
+        .rounded{border-radius:0.25rem;}
+        .border{border-width:1px;border-color:#e5e7eb;}
+        .shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px 0 rgba(0,0,0,0.06);}
+        .hover\:underline:hover{text-decoration:underline;}
+        .hover\:bg-gray-200:hover{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity));}
+        .hover\:bg-blue-700:hover{--tw-bg-opacity:1;background-color:rgb(29 78 216 / var(--tw-bg-opacity));}
+        .hover\:bg-green-700:hover{--tw-bg-opacity:1;background-color:rgb(21 128 61 / var(--tw-bg-opacity));}
+        .list-disc{list-style-type:disc;}
+        .justify-between{justify-content:space-between;}
+        .items-center{align-items:center;}
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-blue-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">EduMentor AI</h1>
+            <p class="text-lg">Your Intelligent Learning Companion</p>
+            <button id="signInBtn" class="bg-white text-blue-600 px-4 py-2 rounded hover:bg-gray-200">Sign In</button>
+        </div>
+    </header>
+
+    <nav class="bg-gray-800 text-white p-4">
+        <div class="container mx-auto flex space-x-4">
+            <a href="#home" class="hover:underline">Home</a>
+            <a href="#summarizer" class="hover:underline">Summarizer</a>
+            <a href="#quiz" class="hover:underline">Quiz</a>
+            <a href="#essay" class="hover:underline">Essay Feedback</a>
+            <a href="#progress" class="hover:underline">Progress</a>
+        </div>
+    </nav>
+
+    <main class="container mx-auto p-6">
+        <section id="home" class="mb-8">
+            <h2 class="text-3xl font-bold mb-4">Welcome!</h2>
+            <p class="text-lg">Select a feature from the navigation bar to get started.</p>
+            <ul class="list-disc ml-6 mt-4">
+                <li>Upload a PDF/Image or typed text</li>
+                <li>Get auto-generated summaries</li>
+                <li>Receive quizzes (MCQs, T/F) at 2 difficulty levels</li>
+                <li>Write essays and get soft-skill-based AI feedback</li>
+                <li>Check for grammar, tone, spelling, and clarity</li>
+            </ul>
+        </section>
+
+        <section id="summarizer" class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Input Module</h2>
+            <div class="bg-white p-6 rounded shadow">
+                <div class="mb-4">
+                    <label class="block text-lg font-semibold mb-2">Drag and drop a PDF, image, or typed text</label>
+                    <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png,.txt" class="mb-4">
+                    <p class="text-center">or</p>
+                    <textarea id="textInput" class="w-full p-2 border rounded" rows="5" placeholder="Enter text here"></textarea>
+                </div>
+                <button id="summarizeBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Summarize Text</button>
+                <div id="summaryOutput" class="mt-4 p-4 bg-gray-50 rounded"></div>
+            </div>
+        </section>
+
+        <section id="quiz" class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Generate Quiz</h2>
+            <div class="bg-white p-6 rounded shadow">
+                <div class="mb-4">
+                    <label class="block text-lg font-semibold mb-2">Select Difficulty</label>
+                    <select id="quizDifficulty" class="p-2 border rounded">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+                <button id="generateQuizBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Generate Quiz</button>
+                <div id="quizOutput" class="mt-4 p-4 bg-gray-50 rounded"></div>
+            </div>
+        </section>
+
+        <section id="essay" class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Essay Feedback</h2>
+            <div class="bg-white p-6 rounded shadow">
+                <textarea id="essayInput" class="w-full p-2 border rounded" rows="10" placeholder="Enter your essay here"></textarea>
+                <button id="analyzeEssayBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mt-4">Analyze Essay</button>
+                <div id="essayFeedback" class="mt-4 p-4 bg-gray-50 rounded">
+                    <p><strong>Coherence:</strong> <span id="coherence">N/A</span></p>
+                    <p><strong>Empathy and tone:</strong> <span id="tone">N/A</span></p>
+                    <p><strong>Grammar & spelling:</strong> <span id="grammar">N/A</span></p>
+                    <p><strong>Clarity and flow:</strong> <span id="clarity">N/A</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="progress" class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Progress Tracker</h2>
+            <div class="bg-white p-6 rounded shadow">
+                <button id="viewProgressBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Progress</button>
+                <div id="progressOutput" class="mt-4 p-4 bg-gray-50 rounded">
+                    <h3 class="text-lg font-semibold mb-2">Quiz Scores</h3>
+                    <p>No quiz data available</p>
+                    <h3 class="text-lg font-semibold mb-2 mt-4">Essay Feedback History</h3>
+                    <p>No essay feedback history available</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('summarizeBtn').addEventListener('click', async () => {
+            const fileInput = document.getElementById('fileInput');
+            const textInput = document.getElementById('textInput').value;
+            const summaryOutput = document.getElementById('summaryOutput');
+
+            if (!fileInput.files.length && !textInput) {
+                summaryOutput.innerHTML = '<p class="text-red-500">Please provide a file or text to summarize.</p>';
+                return;
+            }
+
+            summaryOutput.innerHTML = '<p>Loading...</p>';
+            try {
+                let response;
+                if (fileInput.files.length) {
+                    const formData = new FormData();
+                    formData.append('file', fileInput.files[0]);
+                    response = await fetch('/upload-and-summarize', {
+                        method: 'POST',
+                        body: formData
+                    });
+                } else {
+                    response = await fetch('/summarize-text', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ text: textInput })
+                    });
+                }
+
+                const data = await response.json();
+                if (data.error) {
+                    summaryOutput.innerHTML = `<p class="text-red-500">Error: ${data.error}</p>`;
+                } else {
+                    summaryOutput.innerHTML = `<p>${data.summary}</p>`;
+                }
+            } catch (error) {
+                summaryOutput.innerHTML = `<p class="text-red-500">Error: ${error.message}</p>`;
+            }
+        });
+
+        document.getElementById('generateQuizBtn').addEventListener('click', async () => {
+            const textInput = document.getElementById('textInput').value;
+            const difficulty = document.getElementById('quizDifficulty').value;
+            const quizOutput = document.getElementById('quizOutput');
+
+            if (!textInput) {
+                quizOutput.innerHTML = '<p class="text-red-500">Please provide text to generate a quiz.</p>';
+                return;
+            }
+
+            quizOutput.innerHTML = '<p>Loading...</p>';
+            try {
+                const response = await fetch('/generate-quiz', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text: textInput, difficulty })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    quizOutput.innerHTML = `<p class="text-red-500">Error: ${data.error}</p>`;
+                } else {
+                    quizOutput.innerHTML = data.quiz.map((q, i) => `
+                        <div class="mb-4">
+                            <p><strong>Question ${i + 1}:</strong> ${q.question}</p>
+                            ${q.options ? q.options.map((opt, j) => `
+                                <label><input type="radio" name="q${i}" value="${opt}"> ${opt}</label><br>
+                            `).join('') : `
+                                <label><input type="radio" name="q${i}" value="True"> True</label><br>
+                                <label><input type="radio" name="q${i}" value="False"> False</label><br>
+                            `}
+                        </div>
+                    `).join('');
+                    quizOutput.innerHTML += `<button id="submitQuizBtn" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Submit Quiz</button>`;
+                    
+                    document.getElementById('submitQuizBtn').addEventListener('click', async () => {
+                        const answers = data.quiz.map((q, i) => ({
+                            question: q.question,
+                            user_answer: document.querySelector(`input[name="q${i}"]:checked`)?.value,
+                            correct_answer: q.answer
+                        }));
+                        const response = await fetch('/submit-quiz', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ answers, difficulty })
+                        });
+                        const result = await response.json();
+                        quizOutput.innerHTML += `<p class="mt-4">Score: ${result.score}/${result.total}</p>`;
+                    });
+                }
+            } catch (error) {
+                quizOutput.innerHTML = `<p class="text-red-500">Error: ${error.message}</p>`;
+            }
+        });
+
+        document.getElementById('analyzeEssayBtn').addEventListener('click', async () => {
+            const essay = document.getElementById('essayInput').value;
+            const feedbackOutput = document.getElementById('essayFeedback');
+
+            if (!essay) {
+                feedbackOutput.innerHTML = '<p class="text-red-500">Please provide an essay to analyze.</p>';
+                return;
+            }
+
+            feedbackOutput.innerHTML = '<p>Loading...</p>';
+            try {
+                const response = await fetch('/analyze-essay', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ essay })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    feedbackOutput.innerHTML = `<p class="text-red-500">Error: ${data.error}</p>`;
+                } else {
+                    document.getElementById('coherence').textContent = data.coherence;
+                    document.getElementById('tone').textContent = data.tone;
+                    document.getElementById('grammar').textContent = data.grammar;
+                    document.getElementById('clarity').textContent = data.clarity;
+                }
+            } catch (error) {
+                feedbackOutput.innerHTML = `<p class="text-red-500">Error: ${error.message}</p>`;
+            }
+        });
+
+        document.getElementById('viewProgressBtn').addEventListener('click', async () => {
+            const progressOutput = document.getElementById('progressOutput');
+            progressOutput.innerHTML = '<p>Loading...</p>';
+            try {
+                const response = await fetch('/progress');
+                const data = await response.json();
+                progressOutput.innerHTML = `
+                    <h3 class="text-lg font-semibold mb-2">Quiz Scores</h3>
+                    ${data.quiz_scores.length ? data.quiz_scores.map(s => `
+                        <p>${s.timestamp}: ${s.score}/${s.total} (${s.difficulty})</p>
+                    `).join('') : '<p>No quiz data available</p>'}
+                    <h3 class="text-lg font-semibold mb-2 mt-4">Essay Feedback History</h3>
+                    ${data.essay_feedback.length ? data.essay_feedback.map(f => `
+                        <p>${f.timestamp}: Coherence: ${f.feedback.coherence}, Tone: ${f.feedback.tone}, Grammar: ${f.feedback.grammar}, Clarity: ${f.feedback.clarity}</p>
+                    `).join('') : '<p>No essay feedback history available</p>'}
+                `;
+            } catch (error) {
+                progressOutput.innerHTML = `<p class="text-red-500">Error: ${error.message}</p>`;
+            }
+        });
+    </script>
+</body>
+</html>
